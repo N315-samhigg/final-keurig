@@ -64,7 +64,7 @@ nav div.topSec form img {
 nav div.topSec form input {
   width: 600px;
   height: 100%;
-  padding: 0 50px;
+  padding-left: 60px;
   margin-left: -45px;
   background-color: #f3f3f3;
   border: 1px solid #999;
@@ -72,7 +72,7 @@ nav div.topSec form input {
 }
 nav div.topSec form input, nav div.topSec form input::placeholder {
   color: var(--dark-gray);
-  font-size: 15px;
+  font-size: 14px;
 }
 nav div.topSec div.rightCont {
   justify-content: space-between !important;
@@ -86,12 +86,29 @@ nav div.topSec div.rightCont a {
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
-  font-size: 12px;
+  font-size: 10px;
 }
 nav div.topSec div.rightCont a img {
   height: 32px;
   margin-bottom: 2px;
 }
+nav div.topSec div.rightCont a:hover {
+  cursor: pointer;
+}
 nav div.bottomSec {
   height: 40%;
+}
+nav div.bottomSec a {
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+nav div.bottomSec a img {
+  width: 16px;
+  margin-right: 5px;
+}
+nav div.bottomSec .redText {
+  color: #C8102E;
 }

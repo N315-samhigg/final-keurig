@@ -41,7 +41,7 @@ nav {
             input {
                 width: 600px;
                 height: 100%;
-                padding: 0 50px;
+                padding-left: 60px;
                 margin-left: -45px;
                 background-color: #f3f3f3;
                 
@@ -51,7 +51,7 @@ nav {
     
             input, input::placeholder {
                 color: var(--dark-gray);
-                font-size: 15px;
+                font-size: 14px;
             }
         }
     
@@ -68,18 +68,40 @@ nav {
                 align-items: center;
     
                 text-transform: capitalize;
-                font-size: 12px;
+                font-size: 10px;
     
                 img {
                     height: 32px;
                     margin-bottom: 2px;
                 }
             }
+
+            a:hover {
+                cursor: pointer;
+            }
         }
     }
 
     div.bottomSec {
         height: 40%;
+
+        a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 16px;
+                margin-right: 5px;
+            }
+        }
+
+        .redText {
+            color: #C8102E;
+        }
     }
     
 }
