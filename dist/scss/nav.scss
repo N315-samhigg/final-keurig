@@ -1,0 +1,85 @@
+nav {
+    width: 100vw;
+    height: 156px;
+    overflow-y: hidden;
+
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+
+    p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+
+    #siteLogo {
+        width: 10vw;
+        image-rendering: pixelated;
+    }
+
+    div.flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    div.topSec {
+        height: 60%;
+
+        form {
+            width: 600px;
+            height: 40px;
+    
+            display: flex;
+            align-items: center;
+    
+            img {
+                height: 30px;
+                margin-left: 15px;
+                z-index: 2;
+                background-color: #f3f3f3;
+            }
+    
+            input {
+                width: 600px;
+                height: 100%;
+                padding: 0 50px;
+                margin-left: -45px;
+                background-color: #f3f3f3;
+                
+                border: 1px solid #999;
+                border-radius: 100px;
+            }
+    
+            input, input::placeholder {
+                color: var(--dark-gray);
+                font-size: 15px;
+            }
+        }
+    
+        div.rightCont {
+            justify-content: space-between !important;
+            width: 400px;
+            height: 100%;
+            font-size: 14px;
+    
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                text-transform: capitalize;
+                font-size: 12px;
+    
+                img {
+                    height: 32px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+
+    div.bottomSec {
+        height: 40%;
+    }
+    
+}

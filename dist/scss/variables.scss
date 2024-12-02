@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Mark OT";
+    src: url("../public/MarkOT.ttf");
+}
+
+:root {
+    --light-gray: #ECE9E4;
+    --dark-gray: #13171B;
+
+    --gold: #947259;
+    --purple: #473036;
+
+    --font-stack: "Mark OT", "Helvetica", "Helvetica Neue", sans-serif;
+}
