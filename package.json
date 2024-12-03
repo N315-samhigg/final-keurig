@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "live-server dist",
-    "build-webpack": "webpack",
+    "build-webpack": "webpack -w",
     "compile": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map"
   },
   "author": "",

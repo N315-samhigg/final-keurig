@@ -3,11 +3,16 @@
   src: url("../public/MarkOT.ttf");
 }
 :root {
+  --content-width: 1200px;
   --light-gray: #ECE9E4;
   --dark-gray: #13171B;
+  --yellow:#FFC92F;
+  --red: #C60000;
+  --maroon: #5A0000;
   --gold: #947259;
   --purple: #473036;
-  --font-stack: "Mark OT", "Helvetica", "Helvetica Neue", sans-serif;
+  --quick-in-out: cubic-bezier(.5,0,.5,1);
+  --font-stack: "Mark OT", "Helvetica", "Helvetica Neue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -15,16 +20,30 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-stack);
-  background-color: var(--light-gray);
+  transition: all 0.25s var(--quick-in-out);
 }
 
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--light-gray);
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  margin-bottom: 16px;
+img {
+  background-color: transparent;
+}
+
+#app {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+#app .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 calc((100vw - var(--content-width)) / 2);
 }
 
 nav {
@@ -59,7 +78,6 @@ nav div.topSec form img {
   height: 30px;
   margin-left: 15px;
   z-index: 2;
-  background-color: #f3f3f3;
 }
 nav div.topSec form input {
   width: 600px;
@@ -102,6 +120,9 @@ nav div.bottomSec a {
   color: var(--dark-gray);
   text-decoration: none;
   font-weight: bold;
+  margin: 15px;
+  padding: 0;
+  border-radius: 100px;
   display: flex;
   align-items: center;
 }
@@ -109,6 +130,226 @@ nav div.bottomSec a img {
   width: 16px;
   margin-right: 5px;
 }
+nav div.bottomSec a:hover {
+  padding: 15px;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+nav div.bottomSec .gold:hover {
+  color: var(--gold);
+}
 nav div.bottomSec .redText {
   color: #C8102E;
+}
+
+#homePage {
+  background-color: white;
+}
+#homePage .blackFridayDeals {
+  width: 100vw;
+  height: 92px;
+  padding: 14px 0;
+  background-color: var(--purple);
+  display: flex;
+}
+#homePage .blackFridayDeals .deal {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#homePage .blackFridayDeals .deal p, #homePage .blackFridayDeals .deal a {
+  color: white;
+  font-size: 12px;
+  margin: 0;
+}
+#homePage .blackFridayDeals .deal:not(:first-child) {
+  border-left: 1px solid white;
+}
+#homePage #heroAd {
+  width: 100%;
+  margin: 20px 0;
+  image-rendering: crisp-edges;
+}
+#homePage #sortFiltersSec {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#homePage #sortFiltersSec .filters, #homePage #sortFiltersSec .sort {
+  display: flex;
+  flex-wrap: wrap;
+}
+#homePage #sortFiltersSec .filters {
+  width: 950px;
+  height: 100%;
+}
+#homePage #sortFiltersSec .filters .filter {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px;
+  border-radius: 4px;
+  border: 2px solid #999;
+}
+#homePage #sortFiltersSec .filters .filter p {
+  margin: 0;
+  font-size: 14px;
+}
+#homePage #sortFiltersSec .filters .filter img {
+  margin-left: 10px;
+  width: 18px;
+  height: 10px;
+  image-rendering: pixelated;
+  opacity: 0.6;
+  transform: rotate(0deg);
+}
+#homePage #sortFiltersSec .filters .filter:not(:first-child) {
+  margin-left: 10px;
+}
+#homePage #sortFiltersSec .filters .filter:hover {
+  border-color: black;
+}
+#homePage #sortFiltersSec .filters .filter:hover img {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+#homePage #sortFiltersSec .sort {
+  width: 188.89px;
+  height: 42px;
+  display: flex;
+  justify-content: flex-start;
+}
+#homePage #sortFiltersSec .sort * {
+  width: 100%;
+}
+#homePage #sortFiltersSec .sort p {
+  font-size: 12px;
+  margin: 0;
+}
+#homePage #sortFiltersSec .sort select {
+  width: 100%;
+  height: 20px;
+  font-size: 16px;
+  border: none;
+}
+#homePage #itemSec {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#homePage #itemSec a {
+  text-decoration: none;
+}
+#homePage #itemSec .item {
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  box-shadow: 0 0 10px #333;
+}
+#homePage #itemSec .item .tag {
+  width: fit-content;
+  margin: 0;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #999;
+  color: var(--dark-gray);
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#homePage #itemSec .item .tag.yellow {
+  background-color: var(--yellow);
+  color: black;
+}
+#homePage #itemSec .item .tag.red {
+  background-color: var(--red);
+  color: white;
+}
+#homePage #itemSec .item img.itemImg {
+  margin: 60px 10px;
+  width: calc(100% - 20px);
+}
+#homePage #itemSec .item .colorSec {
+  width: 100%;
+  margin: 10px;
+}
+#homePage #itemSec .item .colorSec .color {
+  margin: 2.5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  border: white solid 2.5px;
+  outline: white solid 2.5px;
+}
+#homePage #itemSec .item .colorSec .color.selected {
+  outline-color: black;
+}
+#homePage #itemSec .item h3.itemName {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--dark-gray);
+}
+#homePage #itemSec .item .priceSec {
+  margin: 10px;
+  display: flex;
+  font-weight: bold;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+#homePage #itemSec .item .priceSec tr:not(:first-child) {
+  border-block: 1px solid transparent;
+  border-top-color: #555;
+}
+#homePage #itemSec .item .priceSec p.oldPrice {
+  font-size: 13px;
+  text-decoration: line-through;
+}
+#homePage #itemSec .item .priceSec h5.price {
+  font-size: 20px;
+}
+#homePage #itemSec .item .priceSec h5.price sup {
+  margin-top: 19px;
+  font-size: 12px;
+}
+#homePage #itemSec .item .priceSec .sale.price {
+  color: var(--red);
+}
+#homePage #itemSec .item .couponSec {
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-top: -10px;
+  font-size: 11px;
+  color: var(--maroon);
+  display: flex;
+  align-items: center;
+}
+#homePage #itemSec .item .couponSec .couponHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 20px;
+  margin-right: 5px;
+  background-color: var(--maroon);
+  font-size: 12px;
+  padding: 0 5px;
+  color: white;
+  text-transform: capitalize;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#homePage #itemSec .item .couponSec h6 {
+  font-size: inherit;
+  text-transform: uppercase;
 }

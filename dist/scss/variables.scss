@@ -4,11 +4,18 @@
 }
 
 :root {
+    --content-width: 1200px;
+
     --light-gray: #ECE9E4;
     --dark-gray: #13171B;
 
+    --yellow:#FFC92F;
+    --red: #C60000;
+    --maroon: #5A0000;
     --gold: #947259;
     --purple: #473036;
 
-    --font-stack: "Mark OT", "Helvetica", "Helvetica Neue", sans-serif;
+    --quick-in-out: cubic-bezier(.5,0,.5,1);
+
+    --font-stack: "Mark OT", "Helvetica", "Helvetica Neue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -1,0 +1,268 @@
+#homePage {
+    background-color: white;
+
+    .blackFridayDeals {
+        width: 100vw;
+        height: 92px;
+        padding: 14px 0;
+        background-color: var(--purple);
+
+        display: flex;
+
+        .deal {
+            width: 25%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            p, a {
+                color: white;
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+
+        .deal:not(:first-child) {
+            border-left: 1px solid white;
+        }
+    }
+
+    #heroAd {
+        width: 100%;
+        margin: 20px 0;
+        image-rendering: crisp-edges;
+    }
+
+    #sortFiltersSec {
+        width: 100%;
+        height: 56px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .filters, .sort {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .filters {
+            width: 950px;
+            height: 100%;
+
+            .filter {
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+    
+                padding: 16px;
+                border-radius: 4px;
+                border: 2px solid #999;
+    
+                p {
+                    margin: 0;
+                    font-size: 14px;
+                }
+    
+                img {
+                    margin-left: 10px;
+                    width: 18px;
+                    height: 10px;
+                    image-rendering: pixelated;
+    
+                    opacity: 0.6;
+                    transform: rotate(0deg);
+                }
+            }
+
+            .filter:not(:first-child) {
+                margin-left: 10px;
+            }
+    
+            .filter:hover {
+                border-color: black;
+    
+                img {
+                    opacity: 1;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .sort {
+            width: 188.89px;
+            height: 42px;
+
+            display: flex;
+            justify-content: flex-start;
+
+            * {
+                width: 100%;
+            }
+
+            p {
+                font-size: 12px;
+                margin: 0;
+            }
+
+            select {
+                width: 100%;
+                height: 20px;
+                font-size: 16px;
+                border: none;
+            }
+        }
+        
+    }
+
+    #itemSec {
+        width: 100%;
+        margin: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        a {
+            text-decoration: none;
+        }
+
+        .item {
+            width: 275px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            background-color: white;
+            box-shadow: 0 0 10px #333;
+
+            .tag {
+                width: fit-content;
+                margin: 0;
+                padding: 6px;
+                border-radius: 4px;
+    
+                background-color: #999;
+                color: var(--dark-gray);
+    
+                font-size: 10px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+    
+            .tag.yellow {
+                background-color: var(--yellow);
+                color: black;
+            }
+
+            .tag.red {
+                background-color: var(--red);
+                color: white;
+            }
+
+            img.itemImg {
+                margin: 60px 10px;
+                width: calc(100% - 20px);
+            }
+
+            .colorSec {
+                width: 100%;
+                margin: 10px;
+
+                .color {
+                    margin: 2.5px;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 20px;
+                    border: white solid 2.5px;
+                    outline: white solid 2.5px;
+                }
+
+                .color.selected {
+                    outline-color: black;
+                }
+            }
+
+            h3.itemName {
+                margin-left: 10px;
+
+                font-size: 16px;
+                font-weight: normal;
+                color: var(--dark-gray);
+            }
+
+            .priceSec {
+                margin: 10px;
+                display: flex;
+
+                font-weight: bold;
+                font-size: 12px;
+                color: #555;
+                text-align: center;
+
+                tr:not(:first-child) {
+                    border-block: 1px solid transparent;
+                    border-top-color: #555;
+                }
+
+                p.oldPrice {
+                    font-size: 13px;
+                    text-decoration: line-through;
+                }
+
+                h5.price {
+                    font-size: 20px;
+
+                    sup {
+                        margin-top: 19px;
+                        font-size: 12px;
+                    }
+                }
+
+                .sale.price {
+                    color: var(--red);
+                }
+            }
+
+            .couponSec {
+                width: calc(100% - 20px);
+                margin-left: 10px;
+                margin-top: -10px;
+
+                font-size: 11px;
+                color: var(--maroon);
+
+                display: flex;
+                align-items: center;
+
+                .couponHead {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    width: fit-content;
+                    height: 20px;
+                    margin-right: 5px;
+                    background-color: var(--maroon);
+
+                    font-size: 12px;
+                    padding: 0 5px;
+                    color: white;
+                    text-transform: capitalize;
+
+                    border-top-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+
+                h6 {
+                    font-size: inherit;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
