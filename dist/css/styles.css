@@ -10,6 +10,8 @@
   --red: #C60000;
   --maroon: #5A0000;
   --gold: #947259;
+  --teal: #007C91;
+  --blue: #2F4053;
   --purple: #473036;
   --quick-in-out: cubic-bezier(.5,0,.5,1);
   --font-stack: "Mark OT", "Helvetica", "Helvetica Neue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -239,7 +241,6 @@ nav div.bottomSec .redText {
 }
 #homePage #itemSec {
   width: 100%;
-  margin: 10px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -249,17 +250,28 @@ nav div.bottomSec .redText {
 }
 #homePage #itemSec .item {
   width: 275px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: white;
   box-shadow: 0 0 10px #333;
+  border: 2px solid white;
+}
+#homePage #itemSec .item .fullAd {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #homePage #itemSec .item .tag {
+  z-index: 2;
   width: fit-content;
   margin: 0;
   padding: 6px;
   border-radius: 4px;
+  position: relative;
+  top: 0;
+  left: 0;
   background-color: #999;
   color: var(--dark-gray);
   font-size: 10px;
@@ -274,6 +286,10 @@ nav div.bottomSec .redText {
   background-color: var(--red);
   color: white;
 }
+#homePage #itemSec .item .tag.teal {
+  background-color: var(--teal);
+  color: white;
+}
 #homePage #itemSec .item img.itemImg {
   margin: 60px 10px;
   width: calc(100% - 20px);
@@ -281,6 +297,7 @@ nav div.bottomSec .redText {
 #homePage #itemSec .item .colorSec {
   width: 100%;
   margin: 10px;
+  display: flex;
 }
 #homePage #itemSec .item .colorSec .color {
   margin: 2.5px;
@@ -327,8 +344,7 @@ nav div.bottomSec .redText {
 }
 #homePage #itemSec .item .couponSec {
   width: calc(100% - 20px);
-  margin-left: 10px;
-  margin-top: -10px;
+  margin: 10px;
   font-size: 11px;
   color: var(--maroon);
   display: flex;
@@ -341,15 +357,100 @@ nav div.bottomSec .redText {
   width: fit-content;
   height: 20px;
   margin-right: 5px;
-  background-color: var(--maroon);
+  background-color: var(--dark-gray);
   font-size: 12px;
   padding: 0 5px;
   color: white;
   text-transform: capitalize;
+}
+#homePage #itemSec .item .couponSec .couponHead.red {
+  background-color: var(--red);
+}
+#homePage #itemSec .item .couponSec .couponHead.maroon {
+  margin-top: -10px;
+  background-color: var(--maroon);
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 #homePage #itemSec .item .couponSec h6 {
   font-size: inherit;
   text-transform: uppercase;
+}
+#homePage #itemSec .item .rateSec {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: var(--dark-gray);
+  font-size: 12px;
+}
+#homePage #itemSec .item .rateSec .star {
+  width: 15px;
+  height: 15px;
+  clip-path: polygon(50% 0, 20% 100%, 100% 40%, 0 40%, 80% 100%);
+  background-color: var(--yellow);
+}
+#homePage #itemSec .item .rateSec .star.empty {
+  background-color: #bbb;
+}
+#homePage #itemSec .item .rateSec .star.half {
+  background-image: linear-gradient(90deg, var(--yellow) 49.9%, #bbb 50%);
+}
+#homePage #itemSec .item .rateSec .star:not(:first-child) {
+  margin-left: 1px;
+}
+#homePage #itemSec .item .rateSec p {
+  font-size: inherit;
+  margin-top: 1px;
+  margin-left: 5px;
+}
+#homePage #itemSec .item .shipSec {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 16px;
+  color: var(--dark-gray);
+}
+#homePage #itemSec .item .shipSec img {
+  height: 18px;
+  margin: 10px;
+}
+#homePage #itemSec .item .compareSec {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+#homePage #itemSec .item .compareSec input {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--light-gray);
+  border-radius: 0;
+  margin-right: 5px;
+}
+#homePage #itemSec .item .compareSec input:hover {
+  cursor: pointer;
+}
+#homePage #itemSec .item .compareSec p {
+  color: var(--dark-gray);
+}
+#homePage #itemSec .item .buyNow {
+  width: 235px;
+  height: 40px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  font-weight: bold;
+  font-size: 14px;
+  border: 2px solid var(--yellow);
+}
+#homePage #itemSec .item .buyNow:hover {
+  border-color: var(--blue);
+}
+#homePage #itemSec .item:hover {
+  border-color: var(--dark-gray);
 }

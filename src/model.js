@@ -41,20 +41,47 @@ export function changePage(pageName) {
     if (pageName) {
         $.get("pages/" + pageName + ".html", (data) =>{
             $("#app").html(data);
-            let pageTitle = "Jungle Cook - " + String(pageName).charAt(0).toUpperCase() + String(pageName).slice(1);
+            let pageTitle = "Keurig - " + String(pageName).charAt(0).toUpperCase() + String(pageName).slice(1);
             $("title").html(pageTitle);
         }).fail((error) => {
             console.log("error " + error.message);
             alert("error " + error.message);
-        });
+        }).then(console.log("done load"));
     } else {
         $.get("pages/home.html", (data) =>{
             $("#app").html(data);
-            let pageTitle = "Jungle Cook - Home";
+            let pageTitle = "Keurig - Home";
             $("title").html(pageTitle);
         }).fail((error) => {
             console.log("error " + error);
             alert("error " + error);
-        });
+        }).then(console.log("done load"));
+    }
+
+    if (pageName == "" || pageName == "home") {
+        loadHomeListeners();
+    }
+}
+
+function loadHomeListeners() {
+    for (let i = 0; i < 14; i++) {
+        if (i == 8) {
+            console.log("skip 8");
+        } else {
+            var elementName = "buyNow" + String(i+1);
+            var element = document.getElementById(elementName);
+            element.addEventListener("click", function() {addToCart(i)});
+            //$(elementName).on("click", addToCart(i));
+        }
+    }
+}
+
+async function addToCart(itemNum) {
+    try {
+        //const rawData = await fetch("./items.json");
+        //const itemDataFormatted = await rawData.json();
+        console.log(itemNum)
+      } catch (error) {
+        console.log(error);
     }
 }
