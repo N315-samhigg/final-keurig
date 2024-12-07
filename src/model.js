@@ -12,7 +12,7 @@ onAuthStateChanged(auth, (user) => {
     }
 })
 
-export function signUserUp(fName, lName, email, password) {
+export function signUserUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password).then(() => {
         console.log("User Created");
     }).catch((error) => {
@@ -46,40 +46,46 @@ export function changePage(pageName) {
         }).fail((error) => {
             console.log("error " + error.message);
             alert("error " + error.message);
-        }).then(console.log("done load"));
+        }).then(() => { initListeners() });
     } else {
         $.get("pages/home.html", (data) =>{
             $("#app").html(data);
             let pageTitle = "Keurig - Home";
             $("title").html(pageTitle);
         }).fail((error) => {
-            console.log("error " + error);
-            alert("error " + error);
-        }).then(console.log("done load"));
-    }
-
-    if (pageName == "" || pageName == "home") {
-        loadHomeListeners();
+            console.log("error " + error.message);
+            alert("error " + error.message);
+        }).then(() => { initListeners() });
     }
 }
 
-function loadHomeListeners() {
-    for (let i = 0; i < 14; i++) {
-        if (i == 8) {
-            console.log("skip 8");
-        } else {
-            var elementName = "buyNow" + String(i+1);
-            var element = document.getElementById(elementName);
-            element.addEventListener("click", function() {addToCart(i)});
-            //$(elementName).on("click", addToCart(i));
+function initListeners() {
+
+    if (pageName == "" || pageName == "home") {
+        for (let i = 0; i < 14; i++) {
+            if (i == 7) {
+                console.log("skip 8");
+            } else {
+                var elementName = "#buyNow" + String(i+1);
+                //var element = document.getElementById(elementName);
+    
+                console.log(elementName)
+    
+                //element.addEventListener("click", function() {addToCart(i)});
+                //element.on("click", function() { addToCart(i) });
+                $(document).on("click", elementName, function() {addToCart(i+1)});
+            }
         }
     }
+
+    
 }
 
 async function addToCart(itemNum) {
+    console.log("clicked")
     try {
-        //const rawData = await fetch("./items.json");
-        //const itemDataFormatted = await rawData.json();
+        const rawData = await fetch(`./items/item${itemNum}.json`);
+        const itemDataFormatted = await rawData.json();
         console.log(itemNum)
       } catch (error) {
         console.log(error);
