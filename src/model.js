@@ -67,7 +67,7 @@ function initListeners(pageName) {
     })
 
     if (pageName == "" || pageName == "home") {
-        for (let i = 0; i < 14; i++) {
+        for (let i = 0; i < 26; i++) {
             if (i == 7) {
                 console.log("skip 8");
             } else {
@@ -77,6 +77,11 @@ function initListeners(pageName) {
             }
         }
     } else if (pageName == "cart") {
+        if (!user) {
+            alert("You need to sign in to access this page.")
+            return;
+        }
+
         updateCart();
 
         for (let k = 0; k < cart.length; k++) {
@@ -146,7 +151,7 @@ async function updateCart() {
     }
     //adds full list to display
     $("#itemSec").html(htmlItems);
-    $("#subtotalText").html(`$${subtotal}`);
+    $("#subtotalText").html(`$${Math.round(subtotal * 100) / 100}`);
     $("#total").html(`$${Math.round(subtotal * 107)/100}`);
 
     $(document).on("click", "#checkoutBtn", checkout);

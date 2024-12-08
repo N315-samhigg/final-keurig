@@ -242,6 +242,7 @@ nav div.bottomSec .redText {
 }
 #homePage #itemSec {
   width: 100%;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -254,6 +255,7 @@ nav div.bottomSec .redText {
   margin: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
   background-color: white;
   box-shadow: 0 0 10px #333;
@@ -289,6 +291,10 @@ nav div.bottomSec .redText {
 }
 #homePage #itemSec .item .tag.teal {
   background-color: var(--teal);
+  color: white;
+}
+#homePage #itemSec .item .tag.blue {
+  background-color: #4472C4;
   color: white;
 }
 #homePage #itemSec .item img.itemImg {
@@ -586,6 +592,7 @@ nav div.bottomSec .redText {
   width: 100%;
   min-height: 70vh;
   display: flex;
+  flex-direction: row !important;
   align-items: center;
 }
 #accountPage .accountSec {
