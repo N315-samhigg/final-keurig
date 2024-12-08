@@ -1,6 +1,7 @@
 {
     "name": "K-Brew + Chill™ Coffee Maker",
     "price": 99.99,
-    "image": "item1.webp"
+    "image": "item1.webp",
+    "count": 1
 }
   

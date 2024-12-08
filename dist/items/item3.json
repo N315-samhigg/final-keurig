@@ -1,6 +1,7 @@
 {
-    "name": "Keurig® K-Classic® Coffee Maker",
+    "name": "K-Classic® Coffee Maker",
     "price": 79.99,
-    "image": "item3.webp"
+    "image": "item3.webp",
+    "count": 1
 }
   

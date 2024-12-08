@@ -1,0 +1,157 @@
+#cartPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #itemCount {
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    #cartSec {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        #itemSec {
+            width: calc(100% - 300px);
+            
+            border: 17px solid #E7E4DF;
+            border-radius: 17px;
+
+            .header {
+                width: 100%;
+                height: 70px;
+                background-color: #E7E4DF;
+                color: var(--dark-gray);
+            }
+
+            .item {
+                width: 100%;
+                height: 181px;
+
+                border: 1px solid #E7E4DF;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                img {
+                    width: 131px;
+                    max-height: 100%;
+                }
+
+                .itemInfo {
+                    font-size: 12px;
+                    line-height: 24px;
+                    min-width: 50%;
+
+                    p:not(:first-child) {
+                        font-weight: bold;
+                    }
+                }
+
+                .rightBar {
+                    height: 100%;
+                    margin-right: 5px;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-evenly;
+
+                    .delBtn {
+                        width: 16px;
+                        height: 16px;
+
+                        background-image: url("../public/deleteIcon.svg");
+                        opacity: 0.5;
+                    }
+
+                    .delBtn:hover {
+                        cursor: pointer;
+                        opacity: 0.75;
+                    }
+
+                    .priceCount {
+                        display: flex;
+                        align-items: center;
+                        color: #68676B;
+
+                        .price {
+                            font-size: 12px;
+                            text-transform: lowercase;
+                        }
+
+                        input {
+                            margin: 10px;
+                            width: 55px;
+                            height: 35px;
+
+                            border: var(--yellow) 2px solid;
+                            font-family: inherit;
+                            color: inherit;
+                        }
+
+                        .calcPrice {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        #sidebar {
+            width: 275px;
+
+            h4 {
+                letter-spacing: 3px;
+                font-weight: normal;
+                font-size: 1.25rem;
+                margin-right: 10px;
+            }
+    
+            .infoSec {
+                width: 90%;
+                margin: 10px 0;
+    
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #subtotal {
+                border-bottom: #E7E4DF 1px dashed;
+            }
+
+            #totalSec {
+                background-color: #E7E4DF;
+                padding: 5px 20px;
+                padding-left: 0;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+
+                #total {
+                    font-weight: bold;
+                }
+            }
+
+            #checkoutBtn {
+                width: 100%;
+                height: 40px;
+
+                background-color: var(--yellow);
+                border: none;
+
+                text-transform: uppercase;
+                font-size: calc(0.75vh + 0.75vw);
+            }
+
+            #checkoutBtn:hover {
+                cursor: pointer;
+                background-color: var(--blue);
+                color: white;
+            }
+        }
+    }
+}

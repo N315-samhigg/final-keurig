@@ -1,0 +1,27 @@
+.blackFridayDeals {
+    width: 100vw;
+    height: 92px;
+    padding: 14px 0;
+    background-color: var(--purple);
+
+    display: flex;
+
+    .deal {
+        width: 25%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        p, a {
+            color: white;
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+
+    .deal:not(:first-child) {
+        border-left: 1px solid white;
+    }
+}

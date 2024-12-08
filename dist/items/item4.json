@@ -1,6 +1,7 @@
 {
-    "name": "Keurig® K-Select® Coffee Maker",
+    "name": "K-Select® Coffee Maker",
     "price": 74.99,
-    "image": "item4.webp"
+    "image": "item4.webp",
+    "count": 1
 }
   
