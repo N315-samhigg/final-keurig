@@ -77,11 +77,6 @@ function initListeners(pageName) {
             }
         }
     } else if (pageName == "cart") {
-        if (!user) {
-            alert("You need to sign in to access this page.")
-            return;
-        }
-
         updateCart();
 
         for (let k = 0; k < cart.length; k++) {
